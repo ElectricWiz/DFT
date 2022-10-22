@@ -57,7 +57,8 @@ for i in range(N):
                 elif p>n*2:
                     L = 6
                 else:
-                    L = 0
+                    
+
                 a = float(sym.re(sym.integrate(.5*L * func_prueba(p) * func_prueba(q) *(Cte[p-1][q-1]*np.conj(Cte[p - 1][q-1]))*x2**(-2), (x2,lim, float("inf")))))
                 b = float(sym.re(sym.integrate((-.5)*poperado(p,q)*func_prueba(p)*(Cte[p-1][q-1]*np.conj(Cte[p-1][q-1])), (x2, lim, float("inf")))))
                 return a + b
@@ -174,10 +175,8 @@ for i in range(N):
     
     for x in linalg.eigvals(H):
         Eigs.append(x)
-            
-    Eigss = np.asarray(Eigs).reshape((m*n,1))
 
-    Esx = np.concatenate((Esx,Eigss),axis=1)
+    Esx = np.concatenate(Esx,np.asarray(Eigs).reshape((m*n,0)),axis=1)
 
     for i in range(n*m):
         for k in range(n*m):
