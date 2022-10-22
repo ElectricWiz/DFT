@@ -4,7 +4,7 @@ import sympy as sym
 import seaborn as sns
 import pandas as pd
 
-from scipy.integrate import quad, dblquad
+from scipy.integrate import romberg, dblquad
 from scipy import linalg
 
 
@@ -93,7 +93,7 @@ for i in range(N):
                 h = sym.utilities.lambdify(x2, func_prueba(q)*(Cte[p-1][q-1]*np.conj(Cte[p-1][q-1])), "numpy")
                 def e(x):
                     return -(g(x)*h(x)*Z)/x
-            return quad(e,lim,float("inf"))[0]
+            return romberg(e,lim,float("inf"))[0]
 
         def Expq(p,q):
             if p>n and p<=n*2:
@@ -114,7 +114,7 @@ for i in range(N):
             c = -1*np.power(3/np.pi, 1/3)
             def e(x2):
                 return c*f(x2)*g(x2)*h(x2)
-            return quad(e, lim, np.inf)[0]
+            return romberg(e, lim, np.inf)[0]
 
         def Zpq(p,q):
             if p>n and p<=n*2:
