@@ -1,5 +1,5 @@
 # DFT Basic Eigensolver for the calculation of the ionization energy [Hartrees] by resolving the Kohm Sham equations using scipy, numpy and pandas, currently only works with an LDA exchange correlation functional
-Warning! be careful with the conditonal of th while cycle for small basis sets be mindful of the expresion np.abs((Cte-Cteviej).sum())>.77333*(n*m)**2)
+Warning! be careful with the conditonal of the while cycle for small basis sets, with utmost importance be mindful of the expresion np.abs((Cte-Cteviej).sum())>.77333*(n*m)**2)
 n=# of radial functions
 m=# of spherical harmonics (we asumme m_l = 0)(latex)
 Z=atomic number of the respective atom
