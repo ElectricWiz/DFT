@@ -1,5 +1,8 @@
 # DFT
 Basic Eigensolver for the Kohm Sham equations using scipy, numpy and pandas, currently only uses an LDA exchange correlation functional
+n=number of radial functions
+m=# of spherical harmonics (we asumme m_l = 0)(latex)
+Z=atomic number of the respective atom
 
 What I want for the project
 *Implementing plotting in spherical coordinates of the charge density
